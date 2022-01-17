@@ -1,8 +1,9 @@
 # pylint: disable=C0114, C0115, C0116
 class Item:
-    def __init__(self, name: str, number: str, column: int, row: int) -> None:
+    def __init__(self, name: str, number: str, price:int, column: int, row: int) -> None:
         self.name = name
         self.number = number
+        self.price = price
         self.column = column
         self.row = row
 

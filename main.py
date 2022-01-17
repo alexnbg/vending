@@ -2,33 +2,77 @@
 
 from machine import Machine
 from item import Item
+from money import Money
+from funds import FundsControl
 
-trows = 3
-tcolumns = 3
+# Amount of money to begin with
+# number of coins
+money_0 = Money(20, 20, 20, 10, 10)
+
+# Grid of the machine
+rows_0 = 3
+columns_0 = 3
+
+# some beggining items
+# all prices are in stotinki
+list_items_0 = [
+    {
+        'name': 'Art1',
+        'number': 5,
+        'price': 100
+    },
+    {
+        'name': 'Art2',
+        'number': 5,
+        'price': 120
+    },
+    {
+        'name': 'Art3',
+        'number': 5,
+        'price': 130
+    },
+    {
+        'name': 'Art4',
+        'number': 5,
+        'price': 50
+    },
+    {
+        'name': 'Art5',
+        'number': 5,
+        'price': 80
+    },
+    {
+        'name': 'Art6',
+        'number': 5,
+        'price': 180
+    },
+    {
+        'name': 'Art7',
+        'number': 5,
+        'price': 200
+    },
+    {
+        'name': 'Art8',
+        'number': 5,
+        'price': 250
+    },
+    {
+        'name': 'Art9',
+        'number': 5,
+        'price': 340
+    },
+    {
+        'name': 'Art10',
+        'number': 5,
+        'price': 400
+    }
+]
 
 
-dict_art = {
-    'Art1': 2,
-    'Art2': 2,
-    'Art3': 2,
-    'Art4': 2,
-    'Art5': 2,
-    'Art6': 2,
-    'Art7': 2,
-    'Art8': 2,
-    'Art9': 2,
-    'Art10': 2,
-    'Art11': 2,
-    'Art12': 2,
-    'Art13': 2,
-    'Art14': 2,
-    'Art15': 2,
-    'Art16': 2,
-    'Art17': 2,
-    'Art18': 2,
-    'Art19': 2,
-    'Art20': 2
-}
+
+#
+# some tests
+#
 
 list_art = [
     'Art1',
@@ -54,11 +98,34 @@ list_art = [
     'Art21'
 ]
 
-test1 = Machine(tcolumns, trows)
+# test1 = Machine(columns_0, rows_0)
+
+# for i in range(columns_0):
+#     for j in range(rows_0):
+#         test1.add_item(list_art[j*columns_0+i], 2, 100, i+1, j+1)
+
+# test1.print_all()
+
+#
+#
+#
 
 
-for i in range(tcolumns):
-    for j in range(trows):
-        test1.add_item(list_art[j*tcolumns+i], 2, i+1, j+1)
+current = Machine(columns_0, rows_0)
+funds = FundsControl(money_0)
 
-test1.print_all()
+
+for i in range(columns_0):
+    for j in range(rows_0):
+        current.add_item(
+            list_items_0[j*columns_0+i]['name'], 
+            list_items_0[j*columns_0+i]['number'], 
+            list_items_0[j*columns_0+i]['price'], 
+            i+1, 
+            j+1
+            )
+
+
+current.print_all()
+
+
