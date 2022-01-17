@@ -50,7 +50,8 @@ list_art = [
     'Art17',
     'Art18',
     'Art19',
-    'Art20'
+    'Art20',
+    'Art21'
 ]
 
 test1 = Machine(tcolumns, trows)
