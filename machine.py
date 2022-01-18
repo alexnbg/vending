@@ -27,6 +27,7 @@ class Machine:
         change = Money(0, 0, 0, 0, 0)
 
         if diff == 0:
+            self.money = self.money + amount
             return change
 
         if diff > 0:

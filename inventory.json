@@ -4,7 +4,7 @@
     "items": [
         {
             "name": "Name1",
-            "number": 4,
+            "number": 3,
             "price": 100,
             "column": 1,
             "row": 1
